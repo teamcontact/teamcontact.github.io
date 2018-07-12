@@ -77,3 +77,34 @@ nav .title {
 .nav-links {
     float: right;
 }
+
+#contact-link {
+    margin-right: 20px;
+}
+
+#contact-link::before {
+    color: #F57F17;
+    content: "CONTACT";
+    position: absolute;
+    padding-left: 0px;
+    opacity: 0;
+    transition: 0.1s all linear;
+}
+
+#contact-link:hover::before {
+    opacity: 1;
+    padding-left: 75px;
+}
+
+#contact-link::after {
+    content: '2';
+    font-size: 9pt;
+    position: absolute;
+    margin-left: 2px;
+    opacity: 1;
+    transition: 0.2s opacity;
+}
+
+#contact-link:hover::after {
+    opacity: 0;
+}
