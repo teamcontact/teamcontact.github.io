@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'Quicksand';
-    src: url('../fonts/Quicksand-Regular.ttf');
+    src: url('../fonts/Quicksand-Medium.ttf');
 }
 
 @font-face {
@@ -22,46 +22,71 @@
 }
 
 .title {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
+    float: left;
+    background-image: url(../../assets/images/contact-logo.svg);
+    background-size: cover;
+    height: 100px;
+    width: 100px;
 }
 
-.title-sm {
-    font-size: 18pt;
+@media only screen and (min-width: 1020px) {
+    .nav-links {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .nav-links {
+        display: none;
+    }
 }
 
 nav {
-    padding: 30px;
-    padding-bottom: 60px;
-    /* box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.2); */
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
     user-select: none;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    background-color: #fbfbfb;
+    border-bottom: 1px solid white;
+    z-index: 100;
+}
+
+nav.hovering {
+    border-bottom: 2px solid #eee;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.2);
+    position: fixed;
 }
 
 .nav-links li {
     display: inline-block;
     margin-right: 70px;
+    line-height: 60px;
 }
 
 .nav-links .nav-link {
+    color: #67545b;
     cursor: pointer;
     font-family: 'Rubik', 'Pathway Gothic', sans-serif;
-    font-size: 14pt;
+    font-size: 16pt;
     font-weight: bold;
     transition: color 0.3s;
+    font-variant: small-caps;
 }
 
 .nav-links .nav-link:hover {
-    color: #ffb74d;
+    color: #2196F3;
 }
 
 .nav-links .nav-link.active:hover {
-    color: #F57F17;
+    color: #3F51B5;
 }
 
 .nav-link.active {
     cursor: default;
-    color: #F57F17;
-    /* text-shadow: 0px 1px 0px #94551d; */
+    color: #3F51B5;
     font-weight: bold;
 }
 
@@ -79,11 +104,11 @@ nav .title {
 }
 
 #contact-link {
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 #contact-link::before {
-    color: #F57F17;
+    color: #673AB7;
     content: "CONTACT";
     position: absolute;
     padding-left: 0px;
@@ -93,18 +118,90 @@ nav .title {
 
 #contact-link:hover::before {
     opacity: 1;
-    padding-left: 75px;
+    padding-left: 80px;
 }
 
 #contact-link::after {
     content: '2';
-    font-size: 9pt;
+    font-size: 11pt;
     position: absolute;
     margin-left: 2px;
     opacity: 1;
     transition: 0.2s opacity;
+    top: 8px;
 }
 
 #contact-link:hover::after {
     opacity: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+body {
+    /* linear-gradient(to bottom right, transparent, #659bb5), */
+    /* url(../images/landing-background-grid.svg) */
+    background: #659bb5;
+    background-size: 80px 80px;
+    background-position: 0px 20px;
+    overflow-x: hidden;
+}
+
+.contact-title {
+    float: left;
+    font-family: 'Quicksand', 'Rubik', sans-serif;
+    font-size: 30pt;
+    line-height: 60px;
+    margin-left: 20px;
+    color: #434343;
+}
+
+#contact-logo {
+    float: left;
+}
+
+#printer-container {
+    width: 600px;
+    height: 445.479px;
+    position: relative;
+    right: 138px;
+}
+
+@media only screen and (max-width: 800px) {
+    #printer-container {
+        width: 120vw;
+    }
+}
+
+section.footer {
+    background-color: #16272b;
+    padding: 50px;
+    color: #7fa9b7;
+    text-align: center;
+}
+
+section.footer img {
+    margin-right: 30px;
+    opacity: 0.9;
+}
+
+section.footer img:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 800px) {
+    section.footer img {
+        display: block;
+    }
+}
+
+footer {
+    display: inline-block;
+    margin: 40px;
+    width: 50%;
+    font-family: 'Rubik', sans-serif;
+    font-size: 10pt;
+    border-top: 1px solid #7fa9b7;
+    padding-top: 40px;
 }
