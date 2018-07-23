@@ -4,6 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href="./favicon.ico" />
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        <script type="text/javascript" src="./assets/javascript/FastBlur.js"></script>
+        <script type="text/javascript" src="./assets/javascript/js.cookie.js"></script>
         <script type="text/javascript" src="./assets/javascript/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="./assets/javascript/snap.svg-min.js"></script>
         <script type="text/javascript" src="./assets/javascript/Tween.min.js"></script>
@@ -11,16 +14,35 @@
     </head>
     <body>
         <nav>
-            <img src="./assets/images/contact-logo.svg" id="contact-logo" width="60" alt="Contact logo" />
-            <span class="contact-title">CONTACT</span>
+            <div id='title-container'>
+              <img src="./assets/images/contact-logo.svg" id="contact-logo" width="60" alt="Contact logo" />
+              <span class="contact-title">CONTACT</span>
+            </div>
             <ul class="nav-links">
                 <li><a class="nav-link active">Home</a></li>
                 <li><a class="nav-link">Research</a></li>
                 <li><a class="nav-link">Timeline</a></li>
                 <li><a class="nav-link" id="contact-link">Contact</a></li>
             </ul>
+            <i class="fas fa-bars nav-mobile"></i>
         </nav>
-        <section class="container">
+        <section id="landing">
+          <section id="landing-focus">
+            <div id="focus-blurb">
+              <span class='small-title'>Team</span>
+              <span class='big-title'>CONTACT</span>
+              <span class='contact-blurb'>The future is clear.</span>
+            </div>
+          </section>
+          <canvas class="background-canvas" id="fallback-background"></canvas>
+          <canvas class="background-canvas" id="landing-background"></canvas>
+          <section id="photo-info">
+            <span id="photo-author"></span>
+            <span id="photo-user"></span>
+            <span>Photos from <a href='https://unsplash.com/' target='_blank'>Unsplash.com</a></span>
+          </section>
+        </section>
+        <section class="container hero">
             <svg xmlns="http://www.w3.org/2000/svg" id="printer-container" version="1.1" viewBox="0 0 831 632">
                 <defs>
                   <style>
@@ -147,6 +169,9 @@
                   </style>
                 </defs>
                 <title>printer-chassis</title>
+                <filter id="blur">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+                </filter>
                 <g id="Layer_1" data-name="Layer 1">
                   <rect class="cls-1" x="698" y="143" width="94" height="414.93"/>
                   <rect class="cls-2" x="724" y="146.96" width="42" height="410.96"/>
@@ -197,7 +222,12 @@
                     </g>
                   </g>
                 </g>
-              </svg>              
+            </svg>
+            <div id="caption-container">
+              <p>Printing the future.</p>
+              <p>(Copies allowed.)</p>
+              <button class='hero-button'>See for yourself</button>
+            </div>  
         </section>
         <section class="footer">
             <section class="image-row">
