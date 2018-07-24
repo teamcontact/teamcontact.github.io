@@ -1,3 +1,13 @@
+@viewport {
+    zoom: 1;
+    min-zoom: 1;
+}
+
+@-ms-viewport {
+    zoom: 1;
+    min-zoom: 1;
+}
+
 @font-face {
     font-family: 'Cabin';
     src: url('../fonts/Cabin-Regular.ttf');
@@ -66,11 +76,15 @@
 }
 
 @media only screen and (max-width: 1020px) {
+    nav {
+        background-color: black !important;
+    }
+
     .nav-links {
         display: none;
         width: 100%;
         position: absolute;
-        background-color: #fbfbfba6;
+        background-color: white;
         z-index: -1;
         left: 0;
         top: 90px;
@@ -298,13 +312,15 @@ section.footer img:hover {
 @media only screen and (max-width: 800px) {
     section.image-row {
         display: table-caption;
-        position: relative;
+        position: absolute;
         left: 50%;
+        transform: translateX(-50%);
     }
 
     section.footer img {
         display: inline-block;
         margin-top: 30%;
+        margin-right: 0%;
     }
 }
 
@@ -364,6 +380,7 @@ section#photo-info {
     position: absolute;
     bottom: 15px;
     left: 15px;
+    z-index: 51;
 }
 
 #photo-info span {

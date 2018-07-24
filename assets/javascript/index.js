@@ -1,19 +1,46 @@
 var ARM_SPEED = 1000;
 var ARM_DELAY = 4000;
-var FALLBACK_PHOTO = {
-    name: 'Bud Helisson',
-    profile: 'https://unsplash.com/@budhelisson',
-    url: '/assets/images/glasses.jpg',
-    username: 'budhelisson'
-};
+var PORTRAIT;
+var FALLBACK_PHOTO;
+var MOBILE;
 
 $(function() {
+    $(window).on('orientationchange', rerender);
+    render();
+});
+
+function rerender() {
+    render();
+    loadedFooter();
+}
+
+function constants() {
+    PORTRAIT = window.innerHeight > window.innerWidth;
+    FALLBACK_PHOTO = (!PORTRAIT) ? 
+    {
+        name: 'Bud Helisson',
+        profile: 'https://unsplash.com/@budhelisson',
+        url: '/assets/images/glasses.jpg',
+        username: 'budhelisson'
+    } :
+    {
+        name: 'Saketh Garuda',
+        profile: 'https://unsplash.com/@sakethgaruda',
+        url: '/assets/images/glasses_portrait.jpg',
+        username: 'sakethgaruda'
+    };
+    MOBILE = /Mobi/.test(navigator.userAgent);
+}
+
+function render() {
+    constants();
+
     $('canvas').hide();
     $(document.body).css('padding-top', window.innerHeight + 'px');
 
     var $focus = $('#landing-focus');
     $focus.hide();
-    var $landing = $('#landing-background').add($('#fallback-background'));
+    var $landing = $('#landing-background').add($('#fallback-background')).add($('#landing'));
     $landing.attr('width', window.innerWidth);
     $landing.attr('height', window.innerHeight);
 
@@ -37,17 +64,21 @@ $(function() {
         .css('left', focusLeft)
         .css('top', focusTop);
 
+    $('.small-title').css('font-size', 0.0408163265 * focusHeight + 'px');
+    $('.big-title').css('font-size', 0.142857143 * focusHeight + 'px');
+    $('.contact-blurb').css('font-size', 0.037414949 * focusHeight + 'px');
+
     $('.nav-mobile').click(function() {
         var $bars = $(this);
         if ($bars.is('.clicked')) {
             $bars.removeClass('clicked');
-            $('.nav-links').slideUp();
+            $('.nav-links').hide();
         } else {
             $bars.addClass('clicked');
-            $('.nav-links').slideDown();
+            $('.nav-links').show();
         }
     });
-});
+}
 
 function drawAndBlurImage(canvas, image, photoData, tile) {
     var $focus = $('#landing-focus');
@@ -71,7 +102,7 @@ function drawAndBlurImage(canvas, image, photoData, tile) {
         }
     }
 
-    boxBlurCanvasRGB(canvas, 0, 0, window.innerWidth, window.innerHeight, 5, 1);
+    boxBlurCanvasRGB(canvas, 0, 0, window.innerWidth, window.innerHeight, (MOBILE) ? 1 : 5, 1);
     
     if (photoData === undefined) return;
     $focus.css('background-image', 'url(' + photoData.url + ')');
@@ -110,14 +141,17 @@ function getElementTransform(elem) {
 
 function getBackgroundPhoto(callback) {
     var existingPhotos = Cookies.get('background-29');
+    var orientation = Cookies.get('portrait');
 
-    if (existingPhotos === undefined) {
+    console.log(orientation);
+
+    if (existingPhotos === undefined || orientation !== PORTRAIT.toString()) {
         console.log('no cached photos, using ajax.');
         $.ajax({
             cache: false,
             data: {
                 count: 30,
-                orientation: (window.innerHeight > window.innerWidth) ? 'portrait' : 'landscape',
+                orientation: (PORTRAIT) ? 'portrait' : 'landscape',
                 query: 'color lens'
             },
             headers: {
@@ -139,6 +173,7 @@ function getBackgroundPhoto(callback) {
 
                     photos.push(photo);
                     Cookies.set('background-' + i, JSON.stringify(photo), { expires: 1 / 24 });
+                    Cookies.set('portrait', PORTRAIT.toString(), { expires: 1 / 24 });
                 }
 
                 callback(photos[Math.floor(Math.random() * 30)]);
@@ -150,6 +185,11 @@ function getBackgroundPhoto(callback) {
         var photo = JSON.parse(Cookies.get('background-' + Math.floor(Math.random() * 30)));
         callback(photo);
     }
+}
+
+function loadedFooter() {
+    if (PORTRAIT) $('footer').css('margin-top', $('section.image-row').innerHeight() + 40);
+    else $('footer').css('margin-top', '40px');
 }
 
 function _refreshBackgrounds() {
