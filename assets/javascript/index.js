@@ -167,7 +167,7 @@ function getBackgroundPhoto(callback) {
                     let photo = {
                         name: data[i].user['name'],
                         profile: data[i].user['links']['html'],
-                        url: data[i].urls['raw'],
+                        url: (MOBILE) ? data[i].urls['regular'] : data[i].urls['full'],
                         username: data[i].user['username']
                     };
 
