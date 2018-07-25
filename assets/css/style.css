@@ -161,6 +161,7 @@ nav.hovering {
     font-family: 'Rubik', 'Pathway Gothic', sans-serif;
     font-size: 11pt;
     transition: color 0.3s;
+    text-decoration: none;
     text-transform: uppercase;
 }
 

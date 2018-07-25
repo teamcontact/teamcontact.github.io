@@ -1,6 +1,5 @@
 var ARM_SPEED = 1000;
 var ARM_DELAY = 4000;
-var PORTRAIT;
 var FALLBACK_PHOTO;
 var MOBILE;
 
@@ -15,7 +14,6 @@ function rerender() {
 }
 
 function constants() {
-    PORTRAIT = window.innerHeight > window.innerWidth;
     FALLBACK_PHOTO = (!PORTRAIT) ? 
     {
         name: 'Bud Helisson',
@@ -51,7 +49,7 @@ function render() {
         setTimeout(function() {
             drawRandomBg();
         }, 2000);
-    }
+    };
 
     var focusHeight = window.innerHeight / 1.5;
     var focusLeft = (window.innerWidth - focusHeight) / 2;
@@ -67,17 +65,6 @@ function render() {
     $('.small-title').css('font-size', 0.0408163265 * focusHeight + 'px');
     $('.big-title').css('font-size', 0.142857143 * focusHeight + 'px');
     $('.contact-blurb').css('font-size', 0.037414949 * focusHeight + 'px');
-
-    $('.nav-mobile').click(function() {
-        var $bars = $(this);
-        if ($bars.is('.clicked')) {
-            $bars.removeClass('clicked');
-            $('.nav-links').hide();
-        } else {
-            $bars.addClass('clicked');
-            $('.nav-links').show();
-        }
-    });
 }
 
 function drawAndBlurImage(canvas, image, photoData, tile) {
@@ -185,11 +172,6 @@ function getBackgroundPhoto(callback) {
         var photo = JSON.parse(Cookies.get('background-' + Math.floor(Math.random() * 30)));
         callback(photo);
     }
-}
-
-function loadedFooter() {
-    if (PORTRAIT) $('footer').css('margin-top', $('section.image-row').innerHeight() + 40);
-    else $('footer').css('margin-top', '40px');
 }
 
 function _refreshBackgrounds() {
