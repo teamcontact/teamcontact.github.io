@@ -179,8 +179,3 @@ function _refreshBackgrounds() {
         Cookies.remove(cookie);
     }
 }
-
-function animate() {
-    requestAnimationFrame(animate);
-    TWEEN.update();
-}

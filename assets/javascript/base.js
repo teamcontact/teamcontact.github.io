@@ -2,7 +2,8 @@ var PORTRAIT = window.innerHeight > window.innerWidth;
 
 $(function() {
     if ($('body').data('navpadding'))
-        $('body').css('padding-top', $('nav').innerHeight() + 20 + 'px');
+        var bonus = $('body').data('bonuspadding') || 0;
+        $('body').css('padding-top', $('nav').innerHeight() + bonus + 'px');
 
     $('.nav-mobile').click(function() {
         var $bars = $(this);

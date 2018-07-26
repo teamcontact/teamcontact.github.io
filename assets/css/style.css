@@ -274,9 +274,9 @@ body {
 
 #caption-container {
     display: inline-block;
-    position: relative;
-    left: -30px;
-    top: 65px;
+    position: absolute;
+    left: 550px;
+    top: 209px;
 }
 
 #caption-container p {
@@ -288,7 +288,15 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
+    #caption-container {
+        display: block;
+        padding-top: 30px;
+        position: static;
+        text-align: center;
+    }
+
     #printer-container {
+        margin-top: 30px;
         width: 120vw;
     }
 }
@@ -433,4 +441,8 @@ span.contact-blurb {
 
 span.big-title {
     font-size: 42pt;
+}
+
+#landing {
+    margin-bottom: 10px;
 }
