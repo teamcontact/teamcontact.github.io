@@ -1,13 +1,15 @@
 <!DOCTYPE html>
     <head>
-        <title>Team CONTACT | Index</title>
+        <title>Team CONTACT | Gallery</title>
         <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href="../favicon.ico" />
         <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/gallery.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
         <script type="text/javascript" src="../assets/javascript/js.cookie.js"></script>
         <script type="text/javascript" src="../assets/javascript/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="../assets/javascript/base.js"></script>
+        <script type="text/javascript" src="../assets/javascript/gallery.js"></script>
     </head>
     <body data-navpadding="true">
         <nav>
@@ -23,6 +25,10 @@
             </ul>
             <i class="fas fa-bars nav-mobile"></i>
         </nav>
+        <section class="graphic-row" id="team-portraits">
+          <span class="leading-header text-center">The Team</span>
+          <div id="team-container"></div>
+        </section>
         <section class="footer">
           <section class="image-row">
             <a href="http://gemstone.umd.edu/"><img src="../assets/images/g_honors_college.png" height="100" /></a>
@@ -30,7 +36,8 @@
             <a href="http://www.honors.umd.edu"><img src="../assets/images/honors-college.png" height="100" onload="loadedFooter()" /></a>
           </section>
           <footer>
-            Team CONTACT conducts its research as part of the Gemstone Honors Program, an experience by the University of Maryland Honors College.
+            <p>Team CONTACT conducts its research as part of the Gemstone Honors Program, an experience by the University of Maryland Honors College.</p>
+              <p>Email us at [address].</p>
           </footer>
         </section>
     </body>

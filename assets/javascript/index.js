@@ -27,13 +27,14 @@ function constants() {
         url: '/assets/images/glasses_portrait.jpg',
         username: 'sakethgaruda'
     };
-    MOBILE = /Mobi/.test(navigator.userAgent);
+    MOBILE = /Mobi/.test(navigator.userAgent) || window.innerWidth <= 800;
 }
 
 function render() {
     constants();
 
     $('canvas').hide();
+    $('.refresh-button').hide();
     $(document.body).css('padding-top', window.innerHeight + 'px');
 
     var $focus = $('#landing-focus');
@@ -48,6 +49,9 @@ function render() {
         drawAndBlurImage('fallback-background', fallback, FALLBACK_PHOTO);
         setTimeout(function() {
             drawRandomBg();
+            $('.refresh-button').show().click(function() {
+                drawRandomBg();
+            });
         }, 2000);
     };
 
@@ -100,6 +104,7 @@ function drawAndBlurImage(canvas, image, photoData, tile) {
 }
 
 function drawRandomBg() {
+    $('.refresh-button').fadeOut();
     getBackgroundPhoto(function(photo) {
         var image = new Image();
         image.crossOrigin = "Anonymous";
@@ -109,6 +114,10 @@ function drawRandomBg() {
             if (image.height && image.width) {
                 $('#landing-focus').fadeOut(200);
                 drawAndBlurImage('landing-background', image, photo);
+
+                setTimeout(function() {
+                    $('.refresh-button').fadeIn();
+                }, 2000);
             }
         };
     });

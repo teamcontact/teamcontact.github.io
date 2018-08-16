@@ -1,0 +1,101 @@
+nav {
+    background-color: black;
+}
+
+.landing-background {
+    background-color: #4b4b4b;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+div#carousel-thumbs {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+img.carousel-image {
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+    height: 20%;
+    margin-top: 10px;
+    margin-left: 10px;
+    opacity: 0.4;
+    transition: 0.25s all;
+    cursor: pointer;
+}
+
+img.carousel-image.current-image {
+    opacity: 1;
+}
+
+img.carousel-image:hover {
+    box-shadow: none;
+    opacity: 1;
+}
+
+.carousel-display {
+    width: 0%;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#carousel-image {
+    height: 100%;
+}
+
+div#team-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member-card {
+    box-sizing: border-box;
+    width: 33%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 800px) {
+    .member-card {
+        width: 100%;
+    }
+}
+
+img.member-avatar {
+    width: 60%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.member-name, .member-title, .member-contact {
+    display: block;
+    margin-top: 2px;
+}
+
+span.member-name {
+    font-family: 'Cabin';
+    font-size: 18pt;
+}
+
+span.member-title {
+    font-style: italic;
+    font-family: 'Cabin';
+}
+
+span.member-contact {
+    font-size: 9pt;
+    margin-top: 20px;
+    font-family: 'Montserrat';
+}
+
+a.member-contact {
+    font-family: 'Cabin';
+    text-decoration: none;
+    margin-top: 20px;
+    color: #0097A7;
+}

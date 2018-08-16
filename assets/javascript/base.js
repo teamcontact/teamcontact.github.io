@@ -1,6 +1,22 @@
 var PORTRAIT = window.innerHeight > window.innerWidth;
 
 $(function() {
+    if (PORTRAIT) $('#statement-section').addClass('check-top');
+
+    $(window).scroll(function() {
+        $('.fade-blurred').not('.fade-shown').each(function(index, elem) {
+            var fromTop = $(elem).is('.check-top');
+            var rect = elem.getBoundingClientRect();
+            var topBound = window.pageYOffset + window.innerHeight + 130;
+
+            if (((fromTop) ? rect.top : rect.bottom) + window.pageYOffset + 150 <= topBound) {
+                setTimeout(function() {
+                    $(elem).addClass('fade-shown');
+                }, 100);
+            }
+        });
+    });
+
     if ($('body').data('navpadding'))
         var bonus = $('body').data('bonuspadding') || 0;
         $('body').css('padding-top', $('nav').innerHeight() + bonus + 'px');
