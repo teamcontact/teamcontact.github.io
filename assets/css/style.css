@@ -234,6 +234,34 @@ nav .title {
     text-align: center;
 }
 
+sup {
+    color: black;
+    font-size: 9pt;
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+}
+
+sub {
+    font-family: 'Nunito Light';
+    font-size: 9pt;
+    display: block;
+}
+
+sub::before {
+    content: "1";
+    font-size: 7pt;
+    font-weight: bold;
+    position: relative;
+    bottom: 5px;
+    margin-right: 2px;
+}
+
+sub i {
+    font-family: inherit;
+    font-size: inherit;
+}
+
 body {
     /* linear-gradient(to bottom right, transparent, #659bb5), */
     /* url(../images/landing-background-grid.svg) */
