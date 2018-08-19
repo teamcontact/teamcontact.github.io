@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Shadows Into Light';
+    src: url('/assets/fonts/ShadowsIntoLightTwo-Regular.ttf');
+}
+
 #contact {
     background-color: #F57C00;
     box-sizing: border-box;
@@ -33,7 +38,14 @@ h1 {
     text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
+.contact-section {
+    font-family: inherit;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
 .contact-badge {
+    cursor: help;
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -42,10 +54,12 @@ h1 {
     vertical-align: middle;
     margin-right: 10px;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
 }
 
-.contact-badge.contact-email::before {
-    content: "\f0e0";
+.contact-badge::before {
+    text-align: center;
     font-family: "Font Awesome 5 Free";
     line-height: 29px;
     font-weight: bold;
@@ -53,8 +67,37 @@ h1 {
     text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
+.contact-badge.contact-email::before {
+    content: "\f0e0";
+}
+
+.contact-badge.contact-github::before {
+    content: "\f09b";
+    font-family: "Font Awesome 5 Brands";
+}
+
 #contact-container {
-    font-family: 'Cabin';
+    font-family: 'Shadows Into Light', 'Cabin';
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    background-color: #FFCC80;
+    border-radius: 2px;
+    box-shadow: inset 0px 1px 0px #FFE0B2, 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+#contact-container::before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-color: #F44336;
+    display: inline-block;
+    left: 50%;
+    position: relative;
+    margin-left: -5px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 0px #EF9A9A, inset 0px -2px 0px #C62828, 0px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -91,4 +134,86 @@ button:active {
     bottom: -1px;
     background-color: #00838F;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+input.incomplete, textarea.incomplete {
+    border: 2px solid #B71C1C !important;
+}
+
+.contact-badge::after {
+    font-family: 'Nunito Light';
+    background-color: white;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 8pt;
+    font-weight: normal;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    transition: 0.3s all;
+    opacity: 0;
+    bottom: 30px;
+}
+
+.contact-badge:hover::after {
+    opacity: 1;
+}
+
+.contact-email::after {
+    content: "Email";
+    bottom: 36px;
+    left: -4px;
+}
+
+.contact-github::after {
+    content: "GitHub";
+    left: -7px;
+    bottom: 36px;
+}
+
+div#contact-message {
+    position: fixed;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-65%);
+    margin: 20px;
+    z-index: 100000000;
+    background-color: #009688;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    cursor: default;
+    user-select: none;
+    transition: 0.25s all;
+    color: white;
+    opacity: 0;
+}
+
+div#contact-message.show-message {
+    bottom: 10px;
+    opacity: 1;
+}
+
+span#message-close {
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+span#message-close:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.message-content {
+    color: white;
+    font-family: 'Nunito Light';
+    font-size: 10pt;
+}
+
+.message-error {
+    background-color: #9C27B0 !important;
 }

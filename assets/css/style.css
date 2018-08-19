@@ -262,6 +262,13 @@ sub i {
     font-size: inherit;
 }
 
+a {
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: #80DEEA;
+}
+
 body {
     /* linear-gradient(to bottom right, transparent, #659bb5), */
     /* url(../images/landing-background-grid.svg) */

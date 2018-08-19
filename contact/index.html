@@ -9,46 +9,58 @@
         <script type="text/javascript" src="../assets/javascript/js.cookie.js"></script>
         <script type="text/javascript" src="../assets/javascript/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="../assets/javascript/base.js"></script>
+        <script type="text/javascript" src="../assets/javascript/contact.js"></script>
+        <script type="text/javascript" src="https://smtpjs.com/v2/smtp.js"></script>
     </head>
     <body data-navpadding="true">
-        <nav>
-            <div id='title-container'>
-              <img src="../assets/images/contact-logo.svg" id="contact-logo" width="60" alt="Contact logo" />
-              <span class="contact-title">CONTACT</span>
-            </div>
-            <ul class="nav-links">
-              <li><a class="nav-link" href='/'>Home</a></li>
-              <li><a class="nav-link" href='/research/'>Research</a></li>
-              <li><a class="nav-link" href='/gallery/'>Gallery</a></li>
-              <li><a class="nav-link active" id="contact-link">Contact</a></li>
-            </ul>
-            <i class="fas fa-bars nav-mobile"></i>
-        </nav>
-        <section id="contact">
-          <h1 style="margin-top: 0px">Contact Us</h1>
-          <div id="contact-container">
+      <div id="contact-message">
+        <span class="message-content">Test Message</span>
+        <span class="fas fa-check" id="message-close"></span>
+      </div>
+      <nav>
+          <div id='title-container'>
+            <img src="../assets/images/contact-logo.svg" id="contact-logo" width="60" alt="Contact logo" />
+            <span class="contact-title">CONTACT</span>
+          </div>
+          <ul class="nav-links">
+            <li><a class="nav-link" href='/'>Home</a></li>
+            <li><a class="nav-link" href='/research/'>Research</a></li>
+            <li><a class="nav-link" href='/gallery/'>Gallery</a></li>
+            <li><a class="nav-link active" id="contact-link">Contact</a></li>
+          </ul>
+          <i class="fas fa-bars nav-mobile"></i>
+      </nav>
+      <section id="contact">
+        <h1 style="margin-top: 0px">Contact Us</h1>
+        <div id="contact-container">
+          <div class="contact-section">
             <span class="contact-badge contact-email"></span>
-            Whatever our email is
+            teamcontact2021@gmail.com
           </div>
-          <h1>Send a Message</h1>
-          <div>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Email" />
+          <div class="contact-section">
+            <span class="contact-badge contact-github"></span>
+            teamcontact
           </div>
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder="Message" rows="10"></textarea>
-          <button>Send</button>
+        </div>
+        <h1>Send a Message</h1>
+        <div>
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Email" />
+        </div>
+        <input type="text" placeholder="Subject" />
+        <textarea placeholder="Message" rows="10"></textarea>
+        <button id="contact-send">Send</button>
+      </section>
+      <section class="footer">
+        <section class="image-row">
+          <a href="http://gemstone.umd.edu/"><img src="../assets/images/g_honors_college.png" height="100" /></a>
+          <img src="../assets/images/contact-logo.svg" width="110" alt="Contact logo" />
+          <a href="http://www.honors.umd.edu"><img src="../assets/images/honors-college.png" height="100" onload="loadedFooter()" /></a>
         </section>
-        <section class="footer">
-          <section class="image-row">
-            <a href="http://gemstone.umd.edu/"><img src="../assets/images/g_honors_college.png" height="100" /></a>
-            <img src="../assets/images/contact-logo.svg" width="110" alt="Contact logo" />
-            <a href="http://www.honors.umd.edu"><img src="../assets/images/honors-college.png" height="100" onload="loadedFooter()" /></a>
-          </section>
-          <footer>
-            <p>Team CONTACT conducts its research as part of the Gemstone Honors Program, an experience by the University of Maryland Honors College.</p>
-              <p>Email us at [address].</p>
-          </footer>
-        </section>
+        <footer>
+          <p>Team CONTACT conducts its research as part of the Gemstone Honors Program, an experience by the University of Maryland Honors College.</p>
+          <p>Email us at <a href="mailto:teamcontact2021@gmail.com">teamcontact2021@gmail.com</a>.</p>
+        </footer>
+      </section>
     </body>
 </html>
