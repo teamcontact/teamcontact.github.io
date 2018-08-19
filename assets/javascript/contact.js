@@ -3,10 +3,14 @@ var MESSAGE_TIMER = -1;
 $(function() {
     $('#contact-send').click(verifyFields);
     $('#message-close').click(hideMessage);
+
+    if (window.location.href.indexOf('?sent') !== -1) {
+        showMessage('Your message was sent successfully!', 0);
+    }
 });
 
 function verifyFields(event) {
-    var $fields = $('input, textarea');
+    var $fields = $('input:not([type=hidden]), textarea');
     var errors = 0;
     var message = "";
 
@@ -26,19 +30,21 @@ function verifyFields(event) {
 
         if (!complete) {
             $field.addClass('incomplete');
+            $field.focus();
             errors++;
         } else $field.removeClass('incomplete');
     });
 
     if (!errors) {
-        console.log('Okay whatever logic we use for sending is here');
         sendMessage(function(response) {
-            message = response;
+            showMessage(response, 0);
         });
         $fields.val("");
+    } else {
+        console.log(errors);
+        console.log('errors!');
+        showMessage(message, errors);
     }
-
-    showMessage(message, errors);
 }
 
 function hideMessage() {
@@ -48,26 +54,17 @@ function hideMessage() {
 }
 
 function sendMessage(callback) {
-    Email.send(
-        "messages-noreply@teamcontact.github.io",
-        "teamcontact2021@gmail.com",
-        "This is a subject",
-        "<h1>this is the body</h2>",
-        {
-            token: "6a6edac0-d069-4ef7-b305-31267021cf45",
-            done: function(response) {
-                callback(response);
-            }
-        }
-    );
+    console.log($('form'))
+    $('form').submit();
 }
 
 function showMessage(message, errors) {
+    $('#contact-message').removeClass('show-message').removeClass('message-error');
     $('#contact-message .message-content').text(message);
     $('#contact-message').addClass('show-message');
     if (errors) $('#contact-message').addClass('message-error');
     if (MESSAGE_TIMER === -1) 
         MESSAGE_TIMER = setTimeout(function() {
             hideMessage();
-        }, message.length * 300);
+        }, message.length * 100);
 }
