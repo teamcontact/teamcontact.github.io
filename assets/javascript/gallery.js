@@ -70,7 +70,7 @@ var TEAM = [{
     title: 'Team Librarian',
     email: 'rgammons@umd.edu'
 }, {
-    avatar: 'sean.jpg',
+    avatar: (Math.random() >= 0.5) ? 'sean.jpg' : 'sean2.png',
     name: 'Sean Winters',
     title: 'Team Member',
     email: 'swinter2@umd.edu'
