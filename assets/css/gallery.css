@@ -2,11 +2,38 @@ nav {
     background-color: black;
 }
 
+#large-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+}
+
+div#large-background, img#image-enlarged {
+    display: none;
+}
+
 .landing-background {
     background-color: #4b4b4b;
     position: relative;
     display: flex;
     flex-direction: row;
+}
+
+img#image-enlarged {
+    box-shadow: 0px 0px 100px black;
+    position: fixed;
+    z-index: 500000;
+    max-height: 90%;
+    max-width: 90%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 #image-carousel {
@@ -16,6 +43,7 @@ nav {
     flex-direction: column;
     padding: 0px;
     position: relative;
+    user-select: none;
 }
 
 #image-carousel .carousel-section {
@@ -83,13 +111,17 @@ section.size-fix {
     display: flex;
     height: 100%;
     align-items: center;
+    width: 100%;
+    padding: 0px 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .carousel-thumb {
     cursor: pointer;
     opacity: 0.5;
     height: 80%;
-    margin: 10px;
+    margin-left: 10px;
 }
 
 .carousel-thumb:hover {

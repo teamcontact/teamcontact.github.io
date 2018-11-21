@@ -2,6 +2,22 @@ var CURR_IMAGE = 0;
 var IMAGES = [
     "contact.jpg",
     "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
+    "contact.jpg",
     "contact.jpg"
 ];
 var TEAM = [{
@@ -88,6 +104,10 @@ $(function() {
 
     updateCurrent(0);
 
+    $('#carousel-current').click(function() {
+        $('#large-background, #image-enlarged').fadeIn();
+    });
+
     $('.carousel-left').click(function() {
         shiftCurrent(-1)
     });
@@ -101,7 +121,22 @@ $(function() {
     });
 
     showTeam();
+
+    $('#large-background, #image-enlarged').click(function() {
+        closeLarge();
+    });
+
+    $(document).keydown(function(evt) {
+        if (evt.key == "Escape" || evt.key == "Backspace") closeLarge();
+    });
 });
+
+function closeLarge() {
+    if ($('#large-background').is(':visible')) {
+        $('#large-background').fadeOut();
+        $('#image-enlarged').fadeOut();
+    }
+}
 
 function shiftCurrent(offset) {
     CURR_IMAGE += offset;
@@ -125,9 +160,14 @@ function updateCurrent(index) {
         $('.carousel-right').fadeIn(300);
     }
 
-    $('#carousel-current').attr('src', '/assets/images/album/' + IMAGES[CURR_IMAGE]);
+    var newSrc = '/assets/images/album/' + IMAGES[CURR_IMAGE];
+
+    $('#image-enlarged').attr('src', newSrc);
+    $('#carousel-current').attr('src', newSrc);
     $('.carousel-thumb').removeClass('current-thumb');
     $($('.carousel-thumb').get(CURR_IMAGE)).addClass('current-thumb');
+
+    $('.size-fix').scrollTo($('.carousel-thumb').get(CURR_IMAGE), 400, { axis: 'x', offset: -10 });
 }
 
 function showTeam() {
