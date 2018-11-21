@@ -77,11 +77,58 @@ var TEAM = [{
 }];
 
 $(function() {
-    $('.landing-background')
+    $('.carousel-left').hide();
+    $('#image-carousel')
         .css('height', window.innerHeight - $('nav').innerHeight() + 'px');
+
+    for (var i = 0; i < IMAGES.length; i++) {
+        var $thumb = $('<img src="/assets/images/album/' + IMAGES[i] + '" class="carousel-thumb" />');
+        $('.size-fix').append($thumb);
+    }
+
+    updateCurrent(0);
+
+    $('.carousel-left').click(function() {
+        shiftCurrent(-1)
+    });
+
+    $('.carousel-right').click(function() {
+        shiftCurrent(1);
+    });
+
+    $('.carousel-thumb').click(function() {
+        updateCurrent($(this).index());
+    });
 
     showTeam();
 });
+
+function shiftCurrent(offset) {
+    CURR_IMAGE += offset;
+    if (CURR_IMAGE < 0) CURR_IMAGE = 0;
+    else if (CURR_IMAGE >= IMAGES.length) CURR_IMAGE = IMAGES.length - 1;
+    updateCurrent(CURR_IMAGE);
+}
+
+function updateCurrent(index) {
+    CURR_IMAGE = index;
+
+    if (index == 0) {
+        $('.carousel-left').fadeOut(300);
+    } else {
+        $('.carousel-left').fadeIn(300);
+    }
+
+    if (index == IMAGES.length - 1) {
+        $('.carousel-right').fadeOut(300);
+    } else {
+        $('.carousel-right').fadeIn(300);
+    }
+
+    $('#carousel-current').attr('src', '/assets/images/album/' + IMAGES[CURR_IMAGE]);
+    $('.carousel-thumb').removeClass('current-thumb');
+    $($('.carousel-thumb').get(CURR_IMAGE)).addClass('current-thumb');
+}
 
 function showTeam() {
     for (var i = 0; i < TEAM.length; i++) {

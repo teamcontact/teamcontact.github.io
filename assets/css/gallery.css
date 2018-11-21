@@ -9,41 +9,96 @@ nav {
     flex-direction: row;
 }
 
-div#carousel-thumbs {
+#image-carousel {
+    background-color: #131313;
+    box-shadow: inset 0px 0px 50px black;
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
-    height: 100%;
-    overflow-y: hidden;
+    padding: 0px;
+    position: relative;
 }
 
-img.carousel-image {
-    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
-    height: 20%;
-    margin-top: 10px;
-    margin-left: 10px;
-    opacity: 0.4;
-    transition: 0.25s all;
+#image-carousel .carousel-section {
+    width: 100%;
+}
+
+#carousel-current {
+    cursor: zoom-in;
+    position: absolute;
+    height: 80%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0px 2px 2px black;
+}
+
+#carousel-row {
+    flex-grow: 3;
+    position: relative;
+}
+
+.carousel-nav.carousel-hidden {
+    display: none;
+}
+
+#carousel-row .carousel-nav::before {
+    color: rgba(255, 255, 255, 0.3);
     cursor: pointer;
+    font-family: "Font Awesome 5 Free";
+    font-size: 20pt;
+    font-weight: 900;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    text-shadow: 0px 2px 2px black;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-img.carousel-image.current-image {
-    opacity: 1;
+#carousel-row .carousel-nav:hover::before {
+    color: white;
 }
 
-img.carousel-image:hover {
-    box-shadow: none;
-    opacity: 1;
+.carousel-nav.carousel-left::before {
+    content: "\f053";
+    left: 0;
 }
 
-.carousel-display {
-    width: 0%;
+.carousel-nav.carousel-right::before {
+    content: "\f054";
+    right: 0;
+}
+
+#carousel-thumbs {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
     flex-grow: 1;
-    text-align: center;
+    position: relative;
 }
 
-#carousel-image {
+section.size-fix {
+    position: absolute;
+    display: flex;
     height: 100%;
+    align-items: center;
+}
+
+.carousel-thumb {
+    cursor: pointer;
+    opacity: 0.5;
+    height: 80%;
+    margin: 10px;
+}
+
+.carousel-thumb:hover {
+    opacity: 0.6;
+}
+
+.carousel-thumb.current-thumb {
+    opacity: 0.85;
+    cursor: default;
 }
 
 div#team-container {
