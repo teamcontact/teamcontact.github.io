@@ -4,7 +4,7 @@
 }
 
 #contact {
-    background-color: #F57C00;
+    background-color: #c9eff4;
     box-sizing: border-box;
     padding: 50px;
     text-align: center;
@@ -22,12 +22,12 @@
     font-size: 12pt;
     border-radius: 3px;
     outline: 0;
-    background-color: #FFB74D;
+    background-color: #80deea;
     transition: 0.25s all;
 }
 
 #contact input:focus, #contact textarea:focus {
-    background-color: #FFE0B2;
+    background-color: white;
 }
 
 h1 {
@@ -81,7 +81,7 @@ h1 {
     display: inline-block;
     text-align: left;
     padding: 20px;
-    background-color: #FFCC80;
+    background-color: #26b6a8;
     border-radius: 2px;
     box-shadow: inset 0px 1px 0px #FFE0B2, 0px 2px 0px rgba(0, 0, 0, 0.2);
 }
