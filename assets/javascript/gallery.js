@@ -7,7 +7,8 @@ var IMAGES = [
     "20181012_161313.jpg",
     "4fdb3ec38c9c4264ac97534f1a2de037.jpeg",
     "5ada41635eb349d7b02adb831d96cf33.jpeg",
-    "79132f802b14423db654267b318f9167.jpeg"
+    "79132f802b14423db654267b318f9167.jpeg",
+    "sam-puff.jpg"
 ];
 var TEAM = [{
     avatar: 'aaron.jpg',
