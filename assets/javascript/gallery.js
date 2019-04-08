@@ -13,12 +13,12 @@ var IMAGES = [
 var TEAM = [{
     avatar: 'aaron.jpg',
     name: 'Aaron Green',
-    title: 'Team Member',
+    title: 'Finance Liaison',
     email: 'agreen19@umd.edu'
 }, {
     avatar: 'dylan.jpg',
     name: 'Dylan Langone',
-    title: 'Team Member',
+    title: 'Library Liaison',
     email: 'dlangone@umd.edu'
 }, {
     avatar: 'eliana.jpg',
@@ -38,7 +38,7 @@ var TEAM = [{
 }, {
     avatar: 'jon.jpg',
     name: 'Jonathan Lin',
-    title: 'Team Member',
+    title: 'Webmaster',
     email: 'jlin1212@terpmail.umd.edu'
 }, {
     avatar: 'kun.jpg',
@@ -53,12 +53,12 @@ var TEAM = [{
 }, {
     avatar: 'moshe.jpg',
     name: 'Moshe Ackman',
-    title: 'Team Member',
+    title: 'Team Liaison',
     email: 'mackman@umd.edu'
 }, {
     avatar: 'ross.jpg',
     name: 'Ross Locraft',
-    title: 'Team Member',
+    title: 'Ombudsperson',
     email: 'rlocraft@terpmail.umd.edu'
 }, {
     avatar: 'sam.jpg',
@@ -78,7 +78,7 @@ var TEAM = [{
 }, {
     avatar: (Math.random() >= 0.5) ? 'sean.jpg' : 'sean2.png',
     name: 'Sean Winters',
-    title: 'Team Member',
+    title: 'Mentor Liaison',
     email: 'swinter2@umd.edu'
 }];
 
