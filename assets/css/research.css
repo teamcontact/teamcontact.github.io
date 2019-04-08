@@ -2,6 +2,43 @@ nav {
     background-color: black;
 }
 
+#research-hero {
+    background-image: url('/assets/images/v2osk-184484-unsplash.jpg');
+    background-position-y: -80%;
+    background-size: cover;
+    font-family: 'Nunito', 'Montserrat', 'Fredoka One', sans-serif;
+    position: relative;
+}
+
+a#subteams-link {
+    color: white;
+    display: inline-block;
+    font-size: 16pt;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    padding: 10px 15px;
+    transition: 0.2s all;
+}
+
+a#subteams-link:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+p.hero {
+    font-family: inherit;
+    font-size: 4vw;
+    color: white;
+    text-shadow: 0px 2px 0px #00000061;
+    margin-bottom: 0.5em;
+    white-space: normal;
+}
+
+p.hero.sub {
+    font-size: 1.5vw;
+    white-space: normal;
+}
+
 .timeline-period {
     display: flex;
     margin-bottom: 2px;
@@ -24,6 +61,28 @@ ul.timeline-items {
 }
 
 @media only screen and (max-width: 800px) {
+    #research-hero {
+        background-position-y: 0px;
+        padding: 20px;
+    }
+
+    a#subteams-link {
+        font-size: 10pt;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 5px;
+    }
+
+    p.hero {
+        font-size: 6vw;
+    }
+
+    p.sub.hero {
+        font-size: 4vw;
+        margin: 20px 0px;
+    }
+
     .timeline-items {
         margin: 30px 0px;
     }
