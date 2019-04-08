@@ -29,7 +29,11 @@
           <section id="research-hero" class="graphic-row">
             <p class="hero">Different disciplines, different solutions.</p>
             <p class="sub hero">Our diverse mix of majors means we diagnose glaucoma from all angles.</p>
-            <a id="subteams-link" href="#" onclick="alert('Not right now though! (The webmaster needs sleep...)')">Meet our subteams.</a>
+            <a id="subteams-link" href="#" onclick="window.scrollTo({
+              behavior: 'smooth',
+              top: document.getElementById('subteams-container').offsetTop - 80,
+              left: 0
+            })">Meet our subteams.</a>
           </section>
           <section class="graphic-row">
             <span class="leading-header text-center">Timeline</span>
@@ -73,6 +77,9 @@
                   </ul>
               </section>
             </div>
+          </section>
+          <section class="graphic-row" id="subteams-container">
+            <span class="leading-header text-center">Our Subteams</span>
           </section>
           <section class="graphic-row">
             <span class="leading-header text-center">Relevant Resources</span>
