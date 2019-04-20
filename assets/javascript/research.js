@@ -94,5 +94,5 @@ $(function() {
         
         $('.subteam-row').height(FULL_HEIGHT);
         if (!PORTRAIT) $('.subteam-row').width(PANE_WIDTH);
-        else $('.subteam-row').css('min-height', 5 * ($('.subteam-title')[0].clientHeight + $('.subteam-blurb')[0].clientHeight) + 25 + 'px');
+        else $('.subteam-row').css('min-height', $('.subteam-title')[0].clientHeight + $('.subteam-blurb')[0].clientHeight + 90 + document.documentElement.clientWidth + 'px');
 });
