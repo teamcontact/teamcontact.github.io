@@ -2,6 +2,10 @@ nav {
     background-color: black;
 }
 
+.hero.container {
+    background-color: black;
+}
+
 #research-hero {
     background-image: url('/assets/images/v2osk-184484-unsplash.jpg');
     background-position-y: -80%;
@@ -344,4 +348,73 @@ ul.timeline-items {
 .research-item .research-univ {
     color: #009688;
     white-space: normal;
+}
+
+#shadow-title {
+    color: white;
+    font-size: 30pt;
+    margin: 25px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+#shadow-blurb {
+    color: white;
+    width: 100%;
+    padding: 0px 30px;
+    margin-top: 20px;
+}
+
+.subteam-blurb {
+    font-family: 'Nunito Light';
+    font-size: 13pt;
+    white-space: normal;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+.subteam-row {
+    display: inline-block;
+    text-align: center;
+}
+
+.subteam-title, .subteam-link {
+    display: inline-block;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+}
+
+.subteam-title::before {
+    content: 'subteam';
+    display: block;
+    font-size: 12pt;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#subteams-container {
+    padding: 50px 0px 0px 0px;
+}
+
+#shadow-row {
+    background-image: url('../images/subteams/shadow-portrait.jpg');
+    background-position-y: 180px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+#shadow-row .subteam-link {
+    font-weight: bold;
+    margin-left: 60px;
+    color: white;
+    margin-top: 50px;
+    transition: 0.4s all;
+}
+
+#shadow-row .subteam-link:hover {
+    color: #bbb;
+}
+
+.subteam-container {
+    font-size: 0;
 }

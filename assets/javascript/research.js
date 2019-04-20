@@ -51,6 +51,14 @@ ARTICLES = [{
 }];
 
 $(function() {
+    $('#subteams-link').click(function() {
+        window.scrollTo({
+            behavior: 'smooth',
+            top: document.getElementById('subteams-container').offsetTop - 80,
+            left: 0
+        });
+    });
+
     $('.timeline-items li').each(function(index, elem) {
         if (index < CURRENT_LOCATION) $(elem).addClass('timeline-complete');
     });
@@ -80,4 +88,9 @@ $(function() {
 
         $('#research-container').append($item);
     }
+
+    PANE_WIDTH = document.documentElement.clientWidth / 4;
+    FULL_HEIGHT = document.documentElement.clientHeight - $('nav')[0].clientHeight;
+    $('.subteam-row').width(PANE_WIDTH);
+    $('.subteam-row').height(FULL_HEIGHT);
 });
