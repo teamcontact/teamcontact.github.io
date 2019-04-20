@@ -352,17 +352,31 @@ ul.timeline-items {
 
 #shadow-title {
     color: white;
+}
+
+.subteam-title {
     font-size: 30pt;
     margin: 25px;
     margin-bottom: 30px;
     margin-top: 40px;
+    text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.4);
+}
+
+#simulation-title {
+    color: #34cd55;
 }
 
 #shadow-blurb {
     color: white;
-    width: 100%;
-    padding: 0px 30px;
-    margin-top: 20px;
+}
+
+#simulation-blurb {
+    color: white;
+}
+
+#tails-title, #tails-blurb {
+    color: #36455f;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
 .subteam-blurb {
@@ -371,6 +385,10 @@ ul.timeline-items {
     white-space: normal;
     text-align: justify;
     box-sizing: border-box;
+    width: 100%;
+    padding: 0px 30px;
+    margin-top: 20px;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
 .subteam-row {
@@ -393,15 +411,34 @@ ul.timeline-items {
     text-align: center;
 }
 
-#subteams-container {
-    padding: 50px 0px 0px 0px;
+.subteam-row {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center bottom;
+}
+
+#eyepad-row {
+    background-color: #E58F65;
+    background-image: url('../images/subteams/eyepad.png');
+}
+
+#eyepad-title {
+    color: rgb(255, 255, 146);
 }
 
 #shadow-row {
-    background-image: url('../images/subteams/shadow-portrait.jpg');
-    background-position-y: 180px;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-color: #0f0f0f;
+    background-image: url('../images/subteams/shadow.png');
+}
+
+#simulation-row {
+    background-color: #5856cd;
+    background-image: url('../images/subteams/simul.png');
+}
+
+#tails-row {
+    background-color: #F9E784;
+    background-image: url('../images/subteams/tails.png');
 }
 
 #shadow-row .subteam-link {
@@ -416,7 +453,7 @@ ul.timeline-items {
     color: #bbb;
 }
 
-.subteam-container {
+#subteams-container {
     font-size: 0;
 }
 
