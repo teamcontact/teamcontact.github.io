@@ -376,6 +376,7 @@ ul.timeline-items {
 .subteam-row {
     display: inline-block;
     text-align: center;
+    vertical-align: top;
 }
 
 .subteam-title, .subteam-link {
@@ -417,4 +418,11 @@ ul.timeline-items {
 
 .subteam-container {
     font-size: 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .subteam-row {
+        display: block;
+        width: 100%;
+    }
 }

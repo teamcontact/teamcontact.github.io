@@ -89,8 +89,9 @@ $(function() {
         $('#research-container').append($item);
     }
 
-    PANE_WIDTH = document.documentElement.clientWidth / 4;
-    FULL_HEIGHT = document.documentElement.clientHeight - $('nav')[0].clientHeight;
-    $('.subteam-row').width(PANE_WIDTH);
-    $('.subteam-row').height(FULL_HEIGHT);
+        PANE_WIDTH = document.documentElement.clientWidth / 4;
+        FULL_HEIGHT = document.documentElement.clientHeight - $('nav')[0].clientHeight;
+        
+        $('.subteam-row').height(FULL_HEIGHT);
+        if (!PORTRAIT) $('.subteam-row').width(PANE_WIDTH);
 });
