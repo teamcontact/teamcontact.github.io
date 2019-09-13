@@ -10,16 +10,17 @@ var IMAGES = [
     "79132f802b14423db654267b318f9167.jpeg",
     "sam-puff.jpg"
 ];
+// {
+//     avatar: 'dylan.jpg',
+//     name: 'Dylan Langone',
+//     title: 'Library Liaison',
+//     email: 'dlangone@umd.edu'
+// }
 var TEAM = [{
     avatar: 'aaron.jpg',
     name: 'Aaron Green',
     title: 'Finance Liaison',
     email: 'agreen19@umd.edu'
-}, {
-    avatar: 'dylan.jpg',
-    name: 'Dylan Langone',
-    title: 'Library Liaison',
-    email: 'dlangone@umd.edu'
 }, {
     avatar: 'eliana.jpg',
     name: 'Eliana Krakovsky',
