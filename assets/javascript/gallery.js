@@ -49,7 +49,7 @@ var TEAM = [{
 }, {
     avatar: 'lauren.jpg',
     name: 'Lauren Cho',
-    title: 'Team Member',
+    title: 'Team Clerk',
     email: 'lcho418@umd.edu'
 }, {
     avatar: 'moshe.jpg',
