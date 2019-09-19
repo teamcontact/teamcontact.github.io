@@ -148,7 +148,7 @@ function getBackgroundPhoto(callback) {
             data: {
                 count: 30,
                 orientation: (PORTRAIT) ? 'portrait' : 'landscape',
-                query: 'color lens'
+                query: 'landscape color'
             },
             headers: {
                 'Authorization': 'Client-ID 96c93293756f65c68a9219b16745f85bdf7cc274bee506764e6afdfeb3233944'
