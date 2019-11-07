@@ -1,5 +1,7 @@
 var CURR_IMAGE = 0;
 var IMAGES = [
+    "dogood.jpg",
+    "topthree.jpg",
     "contact.jpg",
     "20181006_161743.jpg",
     "20181006_162309.jpg",
