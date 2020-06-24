@@ -78,12 +78,13 @@ var TEAM = [{
     name: 'Rachel Gammons',
     title: 'Team Librarian',
     email: 'rgammons@umd.edu'
-}, {
-    avatar: (Math.random() >= 0.5) ? 'sean.jpg' : 'sean2.png',
-    name: 'Sean Winters',
-    title: 'Mentor Liaison',
-    email: 'swinter2@umd.edu'
 }];
+// }, {
+//     avatar: (Math.random() >= 0.5) ? 'sean.jpg' : 'sean2.png',
+//     name: 'Sean Winters',
+//     title: 'Mentor Liaison',
+//     email: 'swinter2@umd.edu'
+// }];
 
 $(function() {
     $('.carousel-left').hide();
