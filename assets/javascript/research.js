@@ -89,7 +89,7 @@ $(function() {
         $('#research-container').append($item);
     }
 
-        PANE_WIDTH = document.documentElement.clientWidth / 4;
+        PANE_WIDTH = document.documentElement.clientWidth / 3;
         FULL_HEIGHT = document.documentElement.clientHeight - $('nav')[0].clientHeight;
         
         $('.subteam-row').height(FULL_HEIGHT);
