@@ -1,4 +1,4 @@
-CURRENT_LOCATION = 10;
+CURRENT_LOCATION = 16;
 
 ARTICLES = [{
     type: 'pdf',
